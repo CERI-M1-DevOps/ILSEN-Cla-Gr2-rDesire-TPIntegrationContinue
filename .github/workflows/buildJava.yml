@@ -24,6 +24,9 @@ jobs:
               distribution: 'corretto'
               java-version: '21'
               cache: maven
+              cache-dependency-path: |
+                  pom.xml
+                  **/pom.xml
         - name: 'build'
           env: 
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

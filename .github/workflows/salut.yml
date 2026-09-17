@@ -1,6 +1,8 @@
 name: Boujour
 
-on: [push] #déclenchement on push
+# on: [push] #déclenchement on push
+on:
+  workflow_dispatch # desactive le workflow auto
 
 jobs:
   Salutations: # nom du job

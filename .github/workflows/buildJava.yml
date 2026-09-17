@@ -11,12 +11,6 @@ jobs:
       steps:
         - name: "Récupérer le code du dêpot"
           uses: actions/checkout@v4
-        # - name: Cache
-        #   uses: actions/cache@v4
-        #   with:
-        #     path: /
-        #     key:
-        #      test-key
             
         - name: 'Setup Java JDK'
           uses: actions/setup-java@v4
@@ -24,9 +18,6 @@ jobs:
               distribution: 'corretto'
               java-version: '21'
               cache: maven
-              cache-dependency-path: |
-                  pom.xml
-                  **/pom.xml
         - name: 'build'
           env: 
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

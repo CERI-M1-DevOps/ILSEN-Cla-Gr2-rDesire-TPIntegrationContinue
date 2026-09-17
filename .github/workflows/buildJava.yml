@@ -1,0 +1,14 @@
+name: Java CI with Maven - Test and package
+
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+    verification:
+      runs-on: ubuntu-latest
+      steps:
+        - name: "Récupérer le code du dêpot"
+          uses: actions/checkout@v4
+    

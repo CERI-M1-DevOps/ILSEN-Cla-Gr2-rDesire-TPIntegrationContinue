@@ -11,16 +11,20 @@ jobs:
       steps:
         - name: "Récupérer le code du dêpot"
           uses: actions/checkout@v4
+            
         - name: 'Setup Java JDK'
           uses: actions/setup-java@v4
           with:
               distribution: 'corretto'
               java-version: '21'
+              cache: maven
         - name: 'build'
           env: 
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           run:
             mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=$(echo ${{ github.repository }} | sed 's-/-_-')
+
+            
           
           
             

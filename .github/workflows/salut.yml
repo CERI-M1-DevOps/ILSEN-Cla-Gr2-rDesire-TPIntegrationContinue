@@ -1,0 +1,14 @@
+name: Boujour
+
+on: [push] #déclenchement on push
+
+jobs:
+  Salutations: # nom du job
+    runs-on : ubuntu-latest
+    steps:
+      - name : Hello
+        env:
+          personnesASaluer: 'Mon voisin Totoro'
+        run: echo "Bonjour ${personnesASaluer}"
+      - name: L'heure de salutation
+        run: echo "L'heure était $(date)."

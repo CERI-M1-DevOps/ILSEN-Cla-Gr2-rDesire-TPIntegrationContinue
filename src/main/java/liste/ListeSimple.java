@@ -8,11 +8,22 @@ public class ListeSimple {
         return size;
     }
 
+    /**
+     * ajoute un élément en tête de la liste
+     *
+     * @param element la valeur à ajouter
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
 
+    /**
+     * remplace la première occurrence d'une valeur si elle existe
+     *
+     * @param element la valeur à rechercher
+     * @param nouvelleValeur la valeur de remplacement
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -80,6 +91,11 @@ public class ListeSimple {
         } else return null;
     }
 
+    /**
+     * recherche le nœud précédant le dernier élément de la liste
+     *
+     * @return l'avant-dernier nœud, ou null si la liste contient moins de deux nœuds
+     */
     public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
